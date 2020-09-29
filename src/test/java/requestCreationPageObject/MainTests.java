@@ -144,7 +144,7 @@ public class MainTests extends DriverSettings {
         klpPage.specificationBtnClick();
         klpPage.packagingSpecificationField(ConfProperties.getProperty("contNumb"));
         klpPage.packFullNameFieldClick();
-        klpPage.pelletTypeField(ConfProperties.getProperty("exText"));
+        klpPage.packagingSpecificationReturnField(ConfProperties.getProperty("exNumb"));
         klpPage.saveBtnClick();
         klpPage.confirmBtnClick();
 
@@ -176,6 +176,7 @@ public class MainTests extends DriverSettings {
         klpPage.contractClick();
         klpPage.contractCreationRequestsClick();
         klpPage.sendOnRevisionBtnClick();
+        sleep();
         klpPage.tabRequestClick();
         klpPage.confirmBtnClick();
 

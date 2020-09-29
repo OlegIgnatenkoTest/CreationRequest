@@ -233,8 +233,8 @@ public class KLP_Page {
     @FindBy(xpath = "//div[@id='tab-content-7']//option[3]")
     private WebElement packFullNameFieldClick;
 
-    @FindBy(id = "packaging_specification_pallet_type0")
-    private WebElement pelletTypeField;
+    @FindBy(id = "packaging_specification_return_multiplicity0")
+    private WebElement packagingSpecificationReturnField;
 
     @FindBy(xpath = "//input[@id='packaging_specification_replacement_cost0']")
     private WebElement packagingSpecificationReplacementCostField;
@@ -510,8 +510,8 @@ public class KLP_Page {
         packFullNameFieldClick.click();
     }
 
-    public void pelletTypeField(String type) {
-        pelletTypeField.sendKeys(type);
+    public void packagingSpecificationReturnField(String type) {
+        packagingSpecificationReturnField.sendKeys(type);
     }
 
     public void saveBtnClick() {
