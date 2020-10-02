@@ -49,13 +49,23 @@ public class MainTests extends DriverSettings {
         kmPage.refundCompensationFieldFill(ConfProperties.getProperty("smallNumb"));
         kmPage.logisticsFieldFill(ConfProperties.getProperty("smallNumb"));
         kmPage.promotionFieldFill(ConfProperties.getProperty("smallNumb"));
+        kmPage.reductionDiscountFieldFill(ConfProperties.getProperty("smallNumb"));
+
 
         kmPage.accounterNameFieldFill(ConfProperties.getProperty("exText"));
         kmPage.atbAddressFieldFill(ConfProperties.getProperty("exText"));
         kmPage.atbEmailFieldFill(ConfProperties.getProperty("exEmail"));
         kmPage.fullNameDiscountAccFieldFill(ConfProperties.getProperty("exText"));
         kmPage.fullNameDocsAccFieldFill(ConfProperties.getProperty("exText"));
+
+        kmPage.scrollUP();
+        kmPage.graphicBtnClick();
+        kmPage.contractRCClick();
+        kmPage.graphicTypeClick();
+        kmPage.isStandardGraphicClick();
+        kmPage.graphic14_2Click();
         sleep();
+
         kmPage.scrollUP();
         kmPage.saveBtnClick();
         kmPage.logout();
