@@ -104,19 +104,77 @@ public class ProductCreationPage {
     @FindBy(id = "length_product")
     private WebElement lengthProductField;
 
-	@FindBy(id = "weight_pack")
-	private WebElement weightPackField;
+    @FindBy(id = "weight_pack")
+    private WebElement weightPackField;
 
-	@FindBy(id = "weight_pcs_net")
+    @FindBy(id = "weight_pcs_net")
     private WebElement weightPcsNetField;
 
-	@FindBy(id = "height_product")
+    @FindBy(id = "height_product")
     private WebElement heightProductField;
 
-	@FindBy(id = "volume_product")
+    @FindBy(id = "volume_product")
     private WebElement volumeProductField;
 
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/form[@id='EditView']/div[@id='EditView_tabs']/ul[@class='nav nav-tabs']/li[3]")
+    private WebElement additionalInformationBtn;
 
+    @FindBy(id = "provider_code")
+    private WebElement providerCodeField;
+
+    @FindBy(xpath = "//select[@id='type']//option[4]")
+    private WebElement productTypeField;
+
+    @FindBy(id = "code_edi")
+    private WebElement codeEdiField;
+
+    @FindBy(xpath = "//select[@id='segment']//option[3]")
+    private WebElement segmentField;
+
+    @FindBy(id = "price_with_vat")
+    private WebElement priceWithVatField;
+
+    @FindBy(xpath = "//select[@id='is_imported']//option[2]")
+    private WebElement isImportedField;
+
+    @FindBy(xpath = "//select[@id='is_cash']//option[3]")
+    private WebElement isCashField;
+
+    @FindBy(xpath = "//select[@id='source']//option[3]")
+    private WebElement sourceField;
+
+    @FindBy(id = "id_contract_erp")
+    private WebElement idContractErpField;
+
+    @FindBy(xpath = "//select[@id='is_private_label']//option[2]")
+    private WebElement isPrivateLabelField;
+
+    @FindBy(id = "price_without_vat")
+    private WebElement priceWithoutVatField;
+
+    @FindBy(xpath = "//select[@id='is_russian']//option[2]")
+    private WebElement isRussianField;
+
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/form[@id='EditView']/div[@id='EditView_tabs']/ul[@class='nav nav-tabs']/li[4]")
+    private WebElement rmsBtn;
+
+    @FindBy(xpath = "//select[@id='status_rms']//option[3]")
+    private WebElement statusRmsField;
+
+    @FindBy(id = "code_rate_vat")
+    private WebElement codeRateVatField;
+
+    @FindBy(xpath = "//div[@id='tab-content-3']//option[10]")
+    private WebElement managerField;
+
+    @FindBy(id = "rate_vat")
+    private WebElement rateVatField;
+
+    @FindBy(id = "amount_in_unit")
+    private WebElement amountInUnitField;
+
+    @FindBy(id = "SAVE")
+    private WebElement saveBtn;
 
 
 
@@ -125,51 +183,51 @@ public class ProductCreationPage {
         jse.executeScript("window.scrollBy(0, 3000)", "");
     }
 
-    public void productPanelClick(){
+    public void productPanelClick() {
         productPanel.click();
     }
 
-    public void productsTabClick(){
+    public void productsTabClick() {
         productsTab.click();
     }
 
-    public void createProductBtnClick(){
+    public void createProductBtnClick() {
         createProductBtn.click();
     }
 
-    public void productNameFieldFill(String name){
+    public void productNameFieldFill(String name) {
         productNameField.sendKeys(name);
     }
 
-    public void productCodeField(String code){
+    public void productCodeField(String code) {
         codeField.sendKeys(code);
     }
 
-    public void statusChooseClick(){
+    public void statusChooseClick() {
         statusChoose.click();
     }
 
-    public void categoryChooseClick(){
+    public void categoryChooseClick() {
         categoryChoose.click();
     }
 
-    public void productCategoryClick(){
+    public void productCategoryClick() {
         productCategory.click();
     }
 
-    public void productClassClick(){
+    public void productClassClick() {
         productClass.click();
     }
 
-    public void productSubClassClick(){
+    public void productSubClassClick() {
         productSubClass.click();
     }
 
-    public void chooseProviderBtnClick(){
+    public void chooseProviderBtnClick() {
         chooseProviderBtn.click();
     }
 
-    public void switchOnProviderWindow(){
+    public void switchOnProviderWindow() {
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> itr = handles.iterator();
         String parentWindow = itr.next();
@@ -185,7 +243,7 @@ public class ProductCreationPage {
         //scrollDown();
     }
 
-    public void searchContract(){
+    public void searchContract() {
 
         chooseContractBtn.click();
 
@@ -204,65 +262,135 @@ public class ProductCreationPage {
         driver.switchTo().window(parentWindow);
     }
 
-    public void vghBtnClick(){
+    public void vghBtnClick() {
         VGHBtn.click();
     }
 
-    public void packInsideFieldFill(String pack){
+    public void packInsideFieldFill(String pack) {
         packInsideField.sendKeys(pack);
     }
 
-    public void layerBoxFieldFill(String box){
+    public void layerBoxFieldFill(String box) {
         layerBoxField.sendKeys(box);
     }
 
-    public void layerPcsFieldFill(String pcs){
+    public void layerPcsFieldFill(String pcs) {
         layerPcsField.sendKeys(pcs);
     }
 
-    public void paletteBoxFieldFill(String palette){
+    public void paletteBoxFieldFill(String palette) {
         paletteBoxField.sendKeys(palette);
     }
 
-    public void maxDeviationGrossFieldFill(String deviation){
+    public void maxDeviationGrossFieldFill(String deviation) {
         maxDeviationGrossField.sendKeys(deviation);
     }
 
-    public void weightPcsFieldFill(String weight){
+    public void weightPcsFieldFill(String weight) {
         weightPcsField.sendKeys(weight);
     }
 
-    public void widthProductFieldFill(String width){
+    public void widthProductFieldFill(String width) {
         widthProductField.sendKeys(width);
     }
 
-    public void lengthProductFieldFill(String length){
+    public void lengthProductFieldFill(String length) {
         lengthProductField.sendKeys(length);
     }
 
-    public void weightPackFieldFill(String weight){
+    public void weightPackFieldFill(String weight) {
         weightPackField.sendKeys(weight);
     }
 
-    public void weightPcsNetFieldFill(String weight){
+    public void weightPcsNetFieldFill(String weight) {
         weightPcsNetField.sendKeys(weight);
     }
 
-    public void heightProductFieldFill(String height){
+    public void heightProductFieldFill(String height) {
         heightProductField.sendKeys(height);
     }
 
-    public void volumeProductFieldFill(String volume){
+    public void volumeProductFieldFill(String volume) {
         volumeProductField.sendKeys(volume);
     }
 
+    public void additionalInformationBtnClick() {
+        additionalInformationBtn.click();
+    }
 
+    public void providerCodeFieldFill(String code) {
+        providerCodeField.sendKeys(code);
+    }
 
+    public void productTypeFieldClick() {
+        productTypeField.click();
+    }
 
+    public void codeEdiFieldFill(String code) {
+        codeEdiField.sendKeys(code);
+    }
 
+    public void segmentFieldClick() {
+        segmentField.click();
+    }
 
+    public void priceWithVatFieldFill(String price) {
+        priceWithVatField.sendKeys(price);
+    }
 
+    public void isImportedFieldClick() {
+        isImportedField.click();
+    }
 
+    public void isCashFieldClick() {
+        isCashField.click();
+    }
 
+    public void sourceFieldClick() {
+        sourceField.click();
+    }
 
+    public void idContractErpFieldFill(String id){
+        idContractErpField.sendKeys(id);
+    }
+
+    public void isPrivateLabelFieldClick(){
+        isPrivateLabelField.click();
+    }
+
+    public void priceWithoutVatFieldFill(String price){
+        priceWithoutVatField.sendKeys(price);
+    }
+
+    public void isRussianFieldClick(){
+        isRussianField.click();
+    }
+
+    public void rmsBtnClick(){
+        rmsBtn.click();
+    }
+
+    public void statusRmsFieldClick(){
+        statusRmsField.click();
+    }
+
+    public void codeRateVatFieldFill(String code){
+        codeRateVatField.sendKeys(code);
+    }
+
+    public void managerFieldClick(){
+        managerField.click();
+    }
+
+    public void rateVatFieldFill(String rate){
+        rateVatField.sendKeys(rate);
+    }
+
+    public void amountInUnitFieldFill(String amount){
+        amountInUnitField.sendKeys(amount);
+    }
+
+    public void saveBtnClick(){
+        saveBtn.click();
+    }
 }
