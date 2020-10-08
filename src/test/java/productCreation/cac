@@ -1,0 +1,121 @@
+package productCreation;
+
+import oldRequestCreation.WebDriverSettings;
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import java.util.Iterator;
+import java.util.Set;
+
+public class cac extends WebDriverSettings {
+
+    @Test(priority = 1)
+    public void loginAdminUserTest() {
+        loginAdmin();
+    }
+
+    @Test(priority = 2)
+    public void openProductTest() {
+        driver.findElement(By.id(PRODUCT_MAIN_TAB)).click();
+        driver.findElement(By.xpath(PRODUCT_TAB)).click();
+    }
+
+    @Test(priority = 3)
+    public void createProductMainInformationTest() throws InterruptedException {
+        driver.findElement(By.xpath(CREATE_PRODUCT_BUTTON)).click();
+        driver.findElement(By.id(FULL_NAME)).sendKeys("Икра");
+        driver.findElement(By.id(CODE_AP)).sendKeys("777");
+        driver.findElement(By.xpath(PRODUCT_STATUS_NEW)).click();
+        driver.findElement(By.xpath(CATEGORY_BAK)).click();
+        driver.findElement(By.xpath(PRODUCT_CATEGORY_OPT5)).click();
+        driver.findElement(By.xpath(PRODUCT_CLASS)).click();
+        driver.findElement(By.xpath(PRODUCT_SUBCLASS)).click();
+
+        driver.findElement(By.id(PROVIDER_CHOOSE_BUTTON)).click();
+
+        Set<String> handles = driver.getWindowHandles();
+        Iterator<String> itr = handles.iterator();
+        String parentWindow = itr.next();
+        String newWindow = itr.next();
+
+        driver.switchTo().window(newWindow);
+
+        driver.findElement(By.id(PROVIDER_NAME)).sendKeys("Рияд");
+        driver.findElement(By.id(SEARCH_PROVIDER_BUTTON)).click();
+        driver.findElement(By.linkText(TABLE_ELEMENT_RIYAD)).click();
+
+        driver.switchTo().window(parentWindow);
+        scrollDown();
+
+        driver.findElement(By.id(CONTRACT_CHOOSE_BUTTON)).click();
+
+        Set<String> handles2 = driver.getWindowHandles();
+        Iterator<String> itr2 = handles2.iterator();
+        String parentWindow2 = itr2.next();
+        String newWindow2 = itr2.next();
+
+        driver.switchTo().window(newWindow2);
+
+        driver.findElement(By.id(CONTRACT_NAME)).sendKeys("33222240");
+        driver.findElement(By.id(SEARCH_CONTRACT_BUTTON)).click();
+        scrollDown();
+        driver.findElement(By.xpath(CONTRACT_NUMBER)).click();
+
+        driver.switchTo().window(parentWindow2);
+        scrollUP();
+        sleep();
+    }
+
+    @Test(priority = 4)
+    public void createProductVGHInformationTest(){
+        driver.findElement(By.xpath(VGH_BUTTON)).click();
+        driver.findElement(By.id(PACK_INSIDE)).sendKeys("10");
+        driver.findElement(By.id(PALLET_PCS)).sendKeys("12");
+        driver.findElement(By.id(LAYERS_BOX)).sendKeys("13");
+        driver.findElement(By.id(BOX_INSIDE)).sendKeys("21");
+        driver.findElement(By.id(LAYERS_PCS)).sendKeys("3");
+        driver.findElement(By.id(PALLET_BOX)).sendKeys("12");
+
+        driver.findElement(By.id(MAX_DEVIATION)).sendKeys("0");
+        driver.findElement(By.id(WEIGHT_PCS)).sendKeys("150");
+        driver.findElement(By.id(WIDTH_PRODUCT)).sendKeys("0.1");
+        driver.findElement(By.id(LENGTH_PRODUCT)).sendKeys("0.1");
+        driver.findElement(By.id(WEIGHT_PACK)).sendKeys("7");
+        driver.findElement(By.id(WEIGHT_PCS_NET)).sendKeys("150");
+        driver.findElement(By.id(HEIGHT_PRODUCT)).sendKeys("0.1");
+        driver.findElement(By.id(VOLUME_PRODUCT)).sendKeys("0.1");
+        scrollUP();
+    }
+
+    @Test(priority = 5)
+    public void createProductAdditionalInformationTest(){
+        driver.findElement(By.xpath(ADDITIONAL_INFORMATION_BUTTON)).click();
+        driver.findElement(By.id(PROVIDER_CODE)).sendKeys("23124422333");
+        driver.findElement(By.xpath(PRODUCT_TYPE_OPT4)).click();
+        driver.findElement(By.id(CODE_EDI)).sendKeys("5553535");
+        driver.findElement(By.xpath(SEGMENT_OPT3)).click();
+        driver.findElement(By.id(PRICE_VAT)).sendKeys("1500");
+        driver.findElement(By.xpath(IMPORTED_OPT2)).click();
+        driver.findElement(By.xpath(CASH_OPT3)).click();
+        driver.findElement(By.xpath(SOURCE_OPT3)).click();
+        driver.findElement(By.id(CONTRACT_ERP_ID)).sendKeys("14114551232");
+        driver.findElement(By.xpath(PRIVATE_LABEL)).click();
+        driver.findElement(By.id(PRICE)).sendKeys("1000");
+        driver.findElement(By.xpath(RUSSIAN)).click();
+    }
+
+    @Test(priority = 6)
+    public void createProductRMSTest(){
+        driver.findElement(By.xpath(RMS_BUTTON)).click();
+        driver.findElement(By.xpath(STATUS_RMS_OPT3)).click();
+        driver.findElement(By.id(CODE_VAT)).sendKeys("32322343");
+        driver.findElement(By.xpath(MANAGER_OPT10)).click();
+        driver.findElement(By.id(RATE_VAT)).sendKeys("22");
+        driver.findElement(By.id(COUNT_IN_UNIT)).sendKeys("1");
+    }
+    @Test(priority = 7)
+    public void createProductSaveTest(){
+        driver.findElement(By.id(SAVE_BUTTON)).click();
+    }
+
+}
