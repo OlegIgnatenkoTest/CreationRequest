@@ -1,19 +1,18 @@
 package addingRole;
 
-import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 
-public class AddingRoleTest extends DriverSettings{
+public class AddingRoleTest extends DriverSettings {
 
     @Test(priority = 1)
-    public void login(){
+    public void login() {
         loginPage.inputLogin(ConfProperties.getProperty("loginAdmin"));
         loginPage.inputPassword(ConfProperties.getProperty("passwordAdmin"));
         loginPage.clickLoginBtn();
     }
 
     @Test(priority = 2)
-    public void userCreation(){
+    public void userCreation() {
         addingRolePage.administratorPanelBtnClick();
         addingRolePage.administrationPanelBtnClick();
         addingRolePage.userManagementLinkClick();
@@ -39,12 +38,34 @@ public class AddingRoleTest extends DriverSettings{
     }
 
     @Test(priority = 4)
-    public void subpanelTitleIsDisplayed(){
+    public void subpanelTitleIsDisplayed() {
         addingRolePage.subpanelTitleIsDisplayed();
     }
 
     @Test(priority = 5)
-    public void roleCheck(){
+    public void roleCheck() throws InterruptedException {
         addingRolePage.roleCheck();
+        addingRolePage.logout();
+        sleep();
+    }
+
+    @Test(priority = 6)
+    public void replacementAdd() {
+        loginPage.inputLogin(ConfProperties.getProperty("loginKMprime"));
+        loginPage.inputPassword(ConfProperties.getProperty("passwordKMprime"));
+        loginPage.clickLoginBtn();
+
+        addingRolePage.administratorBtnClick();
+        addingRolePage.dropdownUserMenuClick();
+        addingRolePage.filterBtnClick();
+        addingRolePage.fullNameFilterFill(ConfProperties.getProperty("exText"));
+        addingRolePage.searchBtnClick();
+        addingRolePage.tableElementClick();
+    }
+
+    @Test(priority = 7)
+    public void replacement(){
+        addingRolePage.replacementBtnIsDisplayedClick();
+        addingRolePage.option2Click();
     }
 }

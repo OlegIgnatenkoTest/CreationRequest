@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import requestCreationPageObject.DriverSettings;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -100,7 +101,50 @@ public class AddingRolePage {
     @FindBy(linkText = "КМ")
     private WebElement roleKM;
 
+    @FindBy(id = "with-label")
+    private WebElement userPanelBtn;
 
+    @FindBy(xpath = "//div[@class='desktop-bar']//ul[@id='toolbar']//li[@id='globalLinks']//ul[@class='dropdown-menu user-dropdown user-menu']//li//a[@id='logout_link']")
+    private WebElement userPanelLogoutBtn;
+
+    @FindBy(xpath = "//button[@id='with-label']")
+    private WebElement administratorBtn;
+
+    @FindBy(xpath = "//div[@class='desktop-bar']//ul[@id='toolbar']//li[@id='globalLinks']//ul[@class='dropdown-menu user-dropdown user-menu']//li//a[@id='employees_link']")
+    private WebElement dropdownUserMenu;
+
+    @FindBy(xpath = "//tr[1]//td[1]//table[1]//tbody[1]//tr[1]//td[1]//ul[1]//li[1]//a[1]")
+    private WebElement filterBtn;
+
+    @FindBy(xpath = "//input[@id='full_name_advanced']")
+    private WebElement fullNameFilter;
+
+    @FindBy(xpath = "//input[@id='search_form_submit_advanced']")
+    private WebElement searchBtn;
+
+    @FindBy(css = "#MassUpdate > table > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2) > span")
+    private WebElement tableElement;
+
+    @FindBy(xpath = "//div[@class='buttons']//input")
+    private WebElement replacementBtn;
+
+    @FindBy(xpath = "//body//option[1]")
+    private WebElement option2;
+
+
+    public void logout() throws InterruptedException {
+        userPanelBtnClick();
+        DriverSettings.sleep();
+        userPanelLogoutBtnClick();
+    }
+
+    public void userPanelBtnClick() {
+        userPanelBtn.click();
+    }
+
+    public void userPanelLogoutBtnClick() {
+        userPanelLogoutBtn.click();
+    }
 
     public void administratorPanelBtnClick(){
         administratorPanelBtn.click();
@@ -200,6 +244,47 @@ public class AddingRolePage {
         System.out.println("Role: " + role);
         Assert.assertEquals(role, "КМ");
     }
+
+    public void administratorBtnClick(){
+        administratorBtn.click();
+    }
+
+    public void dropdownUserMenuClick(){
+        dropdownUserMenu.click();
+    }
+
+    public void filterBtnClick(){
+        filterBtn.click();
+    }
+
+    public void fullNameFilterFill(String name){
+        fullNameFilter.clear();
+        fullNameFilter.sendKeys(name);
+    }
+
+    public void searchBtnClick(){
+        searchBtn.click();
+    }
+
+    public void tableElementClick(){
+        tableElement.click();
+    }
+
+    public void replacementBtnIsDisplayedClick(){
+        boolean isDisplayed = replacementBtn.isDisplayed();
+        System.out.println("Наличие кнопки 'Назначить замещение': " + isDisplayed);
+
+        replacementBtn.click();
+    }
+
+    public void option2Click(){
+        option2.click();
+    }
+
+
+
+
+
 
 
 
