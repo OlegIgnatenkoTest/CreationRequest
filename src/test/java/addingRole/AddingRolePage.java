@@ -129,7 +129,20 @@ public class AddingRolePage {
     private WebElement replacementBtn;
 
     @FindBy(xpath = "//body//option[1]")
-    private WebElement option2;
+    private WebElement option1;
+
+    @FindBy(xpath = "//button[@id='btn_alternate_user_name']")
+    private WebElement userNameBnt;
+
+    @FindBy(xpath = "//tr[10]//td[1]")
+    private WebElement userElement;
+
+    @FindBy(xpath = "//*[@id=\"assignReplacementForm\"]/div/div/div[5]/input[2]")
+    private WebElement cancelBtn;
+
+
+
+
 
 
     public void logout() throws InterruptedException {
@@ -277,8 +290,32 @@ public class AddingRolePage {
         replacementBtn.click();
     }
 
-    public void option2Click(){
-        option2.click();
+    public void option1Click(){
+        option1.click();
+    }
+
+    public void userNameBntClick(){
+        userNameBnt.click();
+    }
+
+    public void cancelBtnClick(){
+        cancelBtn.click();
+    }
+
+    public void userElementClick(){
+
+        Set<String> handles = driver.getWindowHandles();
+        Iterator<String> itr = handles.iterator();
+        String parentWindow = itr.next();
+        String newWindow = itr.next();
+
+        driver.switchTo().window(newWindow);
+
+        scrollDown();
+
+        userElement.click();
+        driver.switchTo().window(parentWindow);
+
     }
 
 

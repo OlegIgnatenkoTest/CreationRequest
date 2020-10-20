@@ -64,8 +64,12 @@ public class AddingRoleTest extends DriverSettings {
     }
 
     @Test(priority = 7)
-    public void replacement(){
+    public void replacement() throws InterruptedException {
         addingRolePage.replacementBtnIsDisplayedClick();
-        addingRolePage.option2Click();
+        addingRolePage.option1Click();
+        addingRolePage.userNameBntClick();
+        addingRolePage.userElementClick();
+        addingRolePage.cancelBtnClick();
+        addingRolePage.logout();
     }
 }
