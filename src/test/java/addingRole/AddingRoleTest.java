@@ -72,4 +72,20 @@ public class AddingRoleTest extends DriverSettings {
         addingRolePage.cancelBtnClick();
         addingRolePage.logout();
     }
+
+    @Test(priority = 8)
+    public void deleteUser() throws InterruptedException {
+        loginPage.inputLogin(ConfProperties.getProperty("loginAdmin"));
+        loginPage.inputPassword(ConfProperties.getProperty("passwordAdmin"));
+        loginPage.clickLoginBtn();
+
+        sleep();
+        addingRolePage.administratorPanelBtnClick();
+        addingRolePage.dropdownUserMenuClick();
+        addingRolePage.coworkersFilterBtnClick();
+        addingRolePage.coworkerFilterNameFieldFill(ConfProperties.getProperty("exText"));
+        addingRolePage.coworkerFilterSearchBtnClick();
+        addingRolePage.testUserClick();
+        addingRolePage.deleteUserBtnClick();
+    }
 }

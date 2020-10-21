@@ -140,6 +140,21 @@ public class AddingRolePage {
     @FindBy(xpath = "//*[@id=\"assignReplacementForm\"]/div/div/div[5]/input[2]")
     private WebElement cancelBtn;
 
+    @FindBy(xpath = "//input[@id='delete_button']")
+    private WebElement deleteUserBtn;
+
+    @FindBy(xpath = "//*[@id=\"pagination\"]/td/table/tbody/tr/td[1]/ul[3]/li")
+    private WebElement coworkerFilterBtn;
+
+    @FindBy(xpath = "//input[@id='search_name_basic']")
+    private WebElement coworkerFilterNameField;
+
+    @FindBy(xpath = "//input[@id='search_form_submit']")
+    private WebElement coworkerFilterSearchBtn;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[3]/b[1]/a[1]")
+    private WebElement testUser;
+
 
 
 
@@ -315,8 +330,33 @@ public class AddingRolePage {
 
         userElement.click();
         driver.switchTo().window(parentWindow);
-
     }
+
+    public void coworkersFilterBtnClick(){
+        coworkerFilterBtn.click();
+    }
+
+    public void coworkerFilterNameFieldFill(String name){
+        coworkerFilterNameField.clear();
+        coworkerFilterNameField.sendKeys(name);
+    }
+
+    public void coworkerFilterSearchBtnClick(){
+        coworkerFilterSearchBtn.click();
+    }
+
+    public void testUserClick(){
+        testUser.click();
+    }
+
+    public void deleteUserBtnClick(){
+        deleteUserBtn.click();
+        driver.switchTo().alert().accept();
+    }
+
+
+
+
 
 
 
