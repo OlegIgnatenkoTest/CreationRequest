@@ -19,7 +19,7 @@ public class KLP_Page {
     @FindBy(id = "grouptab_2")
     private WebElement contracts;
 
-    @FindBy(xpath = "//li[contains(@class,'topnav')]//li[2]//a[1]")
+    @FindBy(xpath = "//body/div[@id='ajaxHeader']/nav[1]/div[1]/div[2]/ul[1]/li[4]/span[2]/ul[1]/li[2]/a[1]")
     private WebElement contractCreationRequests;
 
     @FindBy(xpath = "//li[2]//a[1]//div[2]")

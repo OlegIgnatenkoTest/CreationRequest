@@ -50,7 +50,7 @@ public class AddingRoleTest extends DriverSettings {
     }
 
     @Test(priority = 6)
-    public void replacementAdd() {
+    public void replacementAdd() throws InterruptedException {
         loginPage.inputLogin(ConfProperties.getProperty("loginKMprime"));
         loginPage.inputPassword(ConfProperties.getProperty("passwordKMprime"));
         loginPage.clickLoginBtn();
@@ -61,19 +61,11 @@ public class AddingRoleTest extends DriverSettings {
         addingRolePage.fullNameFilterFill(ConfProperties.getProperty("exText"));
         addingRolePage.searchBtnClick();
         addingRolePage.tableElementClick();
-    }
-
-    @Test(priority = 7)
-    public void replacement() throws InterruptedException {
-        addingRolePage.replacementBtnIsDisplayedClick();
-        addingRolePage.option1Click();
-        addingRolePage.userNameBntClick();
-        addingRolePage.userElementClick();
-        addingRolePage.cancelBtnClick();
         addingRolePage.logout();
     }
 
-    @Test(priority = 8)
+
+    @Test(priority = 7)
     public void deleteUser() throws InterruptedException {
         loginPage.inputLogin(ConfProperties.getProperty("loginAdmin"));
         loginPage.inputPassword(ConfProperties.getProperty("passwordAdmin"));

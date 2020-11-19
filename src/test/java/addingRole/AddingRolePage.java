@@ -101,7 +101,7 @@ public class AddingRolePage {
     @FindBy(linkText = "КМ")
     private WebElement roleKM;
 
-    @FindBy(id = "with-label")
+    @FindBy(xpath = "//body/div[@id='ajaxHeader']/nav[1]/div[1]/div[5]/ul[1]/li[6]/button[1]/span[1]")
     private WebElement userPanelBtn;
 
     @FindBy(xpath = "//div[@class='desktop-bar']//ul[@id='toolbar']//li[@id='globalLinks']//ul[@class='dropdown-menu user-dropdown user-menu']//li//a[@id='logout_link']")
@@ -161,8 +161,8 @@ public class AddingRolePage {
 
 
     public void logout() throws InterruptedException {
-        userPanelBtnClick();
         DriverSettings.sleep();
+        userPanelBtnClick();
         userPanelLogoutBtnClick();
     }
 
@@ -296,17 +296,6 @@ public class AddingRolePage {
 
     public void tableElementClick(){
         tableElement.click();
-    }
-
-    public void replacementBtnIsDisplayedClick(){
-        boolean isDisplayed = replacementBtn.isDisplayed();
-        System.out.println("Наличие кнопки 'Назначить замещение': " + isDisplayed);
-
-        replacementBtn.click();
-    }
-
-    public void option1Click(){
-        option1.click();
     }
 
     public void userNameBntClick(){
