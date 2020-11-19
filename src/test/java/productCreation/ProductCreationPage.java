@@ -74,7 +74,8 @@ public class ProductCreationPage {
     @FindBy(xpath = "//a[contains(text(),'33222240')]")
     private WebElement chooseContractByNumber;
 
-    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/form[@id='EditView']/div[@id='EditView_tabs']/ul[@class='nav nav-tabs']/li[2]")
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/ul[1]/li[2]/a[1]")
+
     private WebElement VGHBtn;
 
     @FindBy(id = "attachments_packaging")
@@ -116,7 +117,7 @@ public class ProductCreationPage {
     @FindBy(id = "volume_product")
     private WebElement volumeProductField;
 
-    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/form[@id='EditView']/div[@id='EditView_tabs']/ul[@class='nav nav-tabs']/li[3]")
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/ul[1]/li[3]/a[1]")
     private WebElement additionalInformationBtn;
 
     @FindBy(id = "provider_code")
@@ -155,7 +156,7 @@ public class ProductCreationPage {
     @FindBy(xpath = "//select[@id='is_russian']//option[2]")
     private WebElement isRussianField;
 
-    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/form[@id='EditView']/div[@id='EditView_tabs']/ul[@class='nav nav-tabs']/li[4]")
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/ul[1]/li[4]/a[1]")
     private WebElement rmsBtn;
 
     @FindBy(xpath = "//select[@id='status_rms']//option[3]")
