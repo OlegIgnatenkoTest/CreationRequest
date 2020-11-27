@@ -1,6 +1,5 @@
 package addingRole;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,57 +29,57 @@ public class AddingRolePage {
         jse.executeScript("window.scrollBy(0, 3000)", "");
     }
 
-    public void scrollUP(){
+    public void scrollUP() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("window.scrollBy(0,-3000)", "");
     }
 
-	@FindBy(xpath = "//button[@id='with-label']//span[contains(text(),'Administrator')]")
-	private WebElement administratorPanelBtn;
+    @FindBy(xpath = "//button[@id='with-label']//span[contains(text(),'Administrator')]")
+    private WebElement administratorPanelBtn;
 
-	@FindBy(xpath = "//div[@class='desktop-bar']//ul[@id='toolbar']//li[@id='globalLinks']//ul[@class='dropdown-menu user-dropdown user-menu']//li//a[@id='admin_link']")
-	private WebElement administrationPanelBtn;
+    @FindBy(xpath = "//div[@class='desktop-bar']//ul[@id='toolbar']//li[@id='globalLinks']//ul[@class='dropdown-menu user-dropdown user-menu']//li//a[@id='admin_link']")
+    private WebElement administrationPanelBtn;
 
-	@FindBy(id = "user_management")
+    @FindBy(id = "user_management")
     private WebElement userManagementLink;
 
-	@FindBy(xpath = "//li[1]//a[1]//div[2]")
+    @FindBy(xpath = "//li[1]//a[1]//div[2]")
     private WebElement createUserBtn;
 
-	@FindBy(id = "user_name")
+    @FindBy(id = "user_name")
     private WebElement userNameField;
 
-	@FindBy(id = "last_name")
+    @FindBy(id = "last_name")
     private WebElement lastNameField;
 
-	@FindBy(id = "Users0emailAddress0")
+    @FindBy(id = "Users0emailAddress0")
     private WebElement userEmailField;
 
-	@FindBy(id = "tab2")
+    @FindBy(id = "tab2")
     private WebElement passwordPanel;
 
-	@FindBy(id = "new_password")
+    @FindBy(id = "new_password")
     private WebElement newPasswordField;
 
-	@FindBy(id = "confirm_pwd")
+    @FindBy(id = "confirm_pwd")
     private WebElement confirmPasswordField;
 
-	@FindBy(id = "SAVE_HEADER")
+    @FindBy(id = "SAVE_HEADER")
     private WebElement saveBtn;
 
-	@FindBy(xpath = "//*[@id=\"formDetailView\"]/div/input[2]")
+    @FindBy(xpath = "//*[@id=\"formDetailView\"]/div/input[2]")
     private WebElement addRoleBtn;
 
-	@FindBy(xpath = "//select[@id='user_role']//option[7]")
+    @FindBy(xpath = "//select[@id='user_role']//option[7]")
     public WebElement userRoleElement;
 
-	@FindBy(id = "user_title")
+    @FindBy(id = "user_title")
     public WebElement userTitleField;
 
-	@FindBy(id = "user_department")
+    @FindBy(id = "user_department")
     public WebElement userDepartment;
 
-	@FindBy(css = "#user_department > option:nth-child(3)")
+    @FindBy(css = "#user_department > option:nth-child(3)")
     public WebElement userDepartmentElement;
 
     @FindBy(xpath = "//div[@class='buttons']//input[3]")
@@ -95,7 +94,7 @@ public class AddingRolePage {
     @FindBy(css = "#addRoleForm > div > div > div:nth-child(5) > input[type=button]:nth-child(1)")
     private WebElement okBtn;
 
-    @FindBy (id = "subpanel_title_aclroles")
+    @FindBy(id = "subpanel_title_aclroles")
     private WebElement subpanelTitleRole;
 
     @FindBy(linkText = "КМ")
@@ -156,10 +155,6 @@ public class AddingRolePage {
     private WebElement testUser;
 
 
-
-
-
-
     public void logout() throws InterruptedException {
         DriverSettings.sleep();
         userPanelBtnClick();
@@ -174,64 +169,64 @@ public class AddingRolePage {
         userPanelLogoutBtn.click();
     }
 
-    public void administratorPanelBtnClick(){
+    public void administratorPanelBtnClick() {
         administratorPanelBtn.click();
     }
 
-    public void administrationPanelBtnClick(){
+    public void administrationPanelBtnClick() {
         administrationPanelBtn.click();
     }
 
-    public void userManagementLinkClick(){
+    public void userManagementLinkClick() {
         userManagementLink.click();
     }
 
-    public void createUserBtnClick(){
+    public void createUserBtnClick() {
         createUserBtn.click();
     }
 
-    public void userNameFieldFill(String name){
+    public void userNameFieldFill(String name) {
         userNameField.sendKeys(name);
     }
 
-    public void lastNameFieldFill(String name){
+    public void lastNameFieldFill(String name) {
         lastNameField.sendKeys(name);
     }
 
-    public void userEmailFieldFill(String email){
+    public void userEmailFieldFill(String email) {
         userEmailField.sendKeys(email);
     }
 
-    public void passwordPanelClick(){
+    public void passwordPanelClick() {
         passwordPanel.click();
     }
 
-    public void newPasswordFieldFill(String password){
+    public void newPasswordFieldFill(String password) {
         newPasswordField.sendKeys(password);
     }
 
-    public void confirmPasswordFieldFill(String password){
+    public void confirmPasswordFieldFill(String password) {
         confirmPasswordField.sendKeys(password);
     }
 
-    public void saveBtnClick(){
+    public void saveBtnClick() {
         saveBtn.click();
     }
 
-    public void addRoleBtnIsDisplayed(){
+    public void addRoleBtnIsDisplayed() {
         boolean addBtn = addRoleBtn.isDisplayed();
         System.out.println("Наличие кнопки 'Назначить роль': " + addBtn);
     }
 
-    public void reportToNameBtnClick(){
+    public void reportToNameBtnClick() {
         reportToNameBtn.click();
     }
 
-    public void userRoleElementChoose(){
+    public void userRoleElementChoose() {
         userRoleElement.click();
     }
 
-    public void userTitleFieldFill(String title){
+    public void userTitleFieldFill(String title) {
         userTitleField.sendKeys(title);
     }
 
@@ -241,11 +236,11 @@ public class AddingRolePage {
         userDepartmentElement.click();
     }
 
-    public void chooseLeadBtnClick(){
+    public void chooseLeadBtnClick() {
         chooseLeadBtn.click();
     }
 
-    public void leadChoosing(){
+    public void leadChoosing() {
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> itr = handles.iterator();
         String parentWindow = itr.next();
@@ -261,52 +256,52 @@ public class AddingRolePage {
         okBtn.click();
     }
 
-    public void subpanelTitleIsDisplayed(){
+    public void subpanelTitleIsDisplayed() {
         boolean isDisplayed = subpanelTitleRole.isDisplayed();
         System.out.println("Наличие панели 'Роли': " + isDisplayed);
     }
 
-    public void roleCheck(){
+    public void roleCheck() {
         subpanelTitleRole.click();
         String role = roleKM.getText();
         System.out.println("Role: " + role);
         Assert.assertEquals(role, "КМ");
     }
 
-    public void administratorBtnClick(){
+    public void administratorBtnClick() {
         administratorBtn.click();
     }
 
-    public void dropdownUserMenuClick(){
+    public void dropdownUserMenuClick() {
         dropdownUserMenu.click();
     }
 
-    public void filterBtnClick(){
+    public void filterBtnClick() {
         filterBtn.click();
     }
 
-    public void fullNameFilterFill(String name){
+    public void fullNameFilterFill(String name) {
         fullNameFilter.clear();
         fullNameFilter.sendKeys(name);
     }
 
-    public void searchBtnClick(){
+    public void searchBtnClick() {
         searchBtn.click();
     }
 
-    public void tableElementClick(){
+    public void tableElementClick() {
         tableElement.click();
     }
 
-    public void userNameBntClick(){
+    public void userNameBntClick() {
         userNameBnt.click();
     }
 
-    public void cancelBtnClick(){
+    public void cancelBtnClick() {
         cancelBtn.click();
     }
 
-    public void userElementClick(){
+    public void userElementClick() {
 
         Set<String> handles = driver.getWindowHandles();
         Iterator<String> itr = handles.iterator();
@@ -321,37 +316,25 @@ public class AddingRolePage {
         driver.switchTo().window(parentWindow);
     }
 
-    public void coworkersFilterBtnClick(){
+    public void coworkersFilterBtnClick() {
         coworkerFilterBtn.click();
     }
 
-    public void coworkerFilterNameFieldFill(String name){
+    public void coworkerFilterNameFieldFill(String name) {
         coworkerFilterNameField.clear();
         coworkerFilterNameField.sendKeys(name);
     }
 
-    public void coworkerFilterSearchBtnClick(){
+    public void coworkerFilterSearchBtnClick() {
         coworkerFilterSearchBtn.click();
     }
 
-    public void testUserClick(){
+    public void testUserClick() {
         testUser.click();
     }
 
-    public void deleteUserBtnClick(){
+    public void deleteUserBtnClick() {
         deleteUserBtn.click();
         driver.switchTo().alert().accept();
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

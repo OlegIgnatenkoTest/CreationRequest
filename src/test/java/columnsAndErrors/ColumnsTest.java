@@ -1,9 +1,11 @@
 package columnsAndErrors;
 
+import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
+@Owner("o.ignatenko")
 public class ColumnsTest extends columnsAndErrors.DriverSettings {
 
     @Test(priority = 1)
@@ -44,7 +46,7 @@ public class ColumnsTest extends columnsAndErrors.DriverSettings {
     }
 
     @Test(priority = 8)
-    public void backRedBtnClick() throws Exception {
+    public void backRedBtnClick() {
         columns.redBtnClick();
 
     }
