@@ -184,6 +184,11 @@ public class ProductCreationPage {
         jse.executeScript("window.scrollBy(0, 3000)", "");
     }
 
+    public void scrollUp() {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0, -3000)", "");
+    }
+
     public void productPanelClick() {
         productPanel.click();
     }
@@ -316,6 +321,7 @@ public class ProductCreationPage {
     }
 
     public void additionalInformationBtnClick() {
+        scrollUp();
         additionalInformationBtn.click();
     }
 
