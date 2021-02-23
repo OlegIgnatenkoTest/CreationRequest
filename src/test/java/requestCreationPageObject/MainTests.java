@@ -1,6 +1,5 @@
 package requestCreationPageObject;
 
-import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
 public class MainTests extends DriverSettings {
@@ -169,11 +168,6 @@ public class MainTests extends DriverSettings {
         klpPage.packFullNameFieldClick();
         klpPage.packagingSpecificationReturnField(ConfProperties.getProperty("exText"));
         klpPage.packIsBack();
-
-
-
-
-
 
 
         klpPage.saveBtnClick();
