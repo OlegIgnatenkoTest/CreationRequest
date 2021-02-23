@@ -35,7 +35,7 @@ public class ProductCreationPage {
     @FindBy(id = "code")
     private WebElement codeField;
 
-    @FindBy(xpath = "//select[@id='status']//option[2]")
+    @FindBy(xpath = "//*[@id=\"status_record\"]/option[2]")
     private WebElement statusChoose;
 
     @FindBy(xpath = "//select[@id='category']//option[3]")
@@ -75,7 +75,6 @@ public class ProductCreationPage {
     private WebElement chooseContractByNumber;
 
     @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/ul[1]/li[2]/a[1]")
-
     private WebElement VGHBtn;
 
     @FindBy(id = "attachments_packaging")
@@ -269,6 +268,7 @@ public class ProductCreationPage {
     }
 
     public void vghBtnClick() {
+        scrollUp();
         VGHBtn.click();
     }
 

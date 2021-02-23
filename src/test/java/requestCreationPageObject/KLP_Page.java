@@ -233,11 +233,14 @@ public class KLP_Page {
     @FindBy(xpath = "//div[@id='tab-content-7']//option[3]")
     private WebElement packFullNameFieldClick;
 
-    @FindBy(id = "packaging_specification_return_multiplicity0")
+    @FindBy(id = "packaging_specification_full_name0")
     private WebElement packagingSpecificationReturnField;
 
     @FindBy(xpath = "//input[@id='packaging_specification_replacement_cost0']")
     private WebElement packagingSpecificationReplacementCostField;
+
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[8]/div[1]/div[3]/div[1]/span[1]/div[1]/div[2]/div[4]/div[2]/select[1]/option[3]")
+    private WebElement packIsBack;
 
     @FindBy(id = "SAVE")
     private WebElement saveBtn;
@@ -512,6 +515,10 @@ public class KLP_Page {
 
     public void packagingSpecificationReturnField(String type) {
         packagingSpecificationReturnField.sendKeys(type);
+    }
+
+    public void packIsBack(){
+        packIsBack.click();
     }
 
     public void saveBtnClick() {

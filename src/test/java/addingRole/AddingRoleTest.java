@@ -3,11 +3,10 @@ package addingRole;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
-@Owner("o.ignatenko")
 public class AddingRoleTest extends DriverSettings {
 
     @Test(priority = 1)
-    public void login() {
+    public void loginAdmin() {
         loginPage.inputLogin(ConfProperties.getProperty("loginAdmin"));
         loginPage.inputPassword(ConfProperties.getProperty("passwordAdmin"));
         loginPage.clickLoginBtn();

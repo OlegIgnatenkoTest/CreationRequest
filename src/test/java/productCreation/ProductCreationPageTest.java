@@ -3,7 +3,6 @@ package productCreation;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
-@Owner("o.ignatenko")
 public class ProductCreationPageTest extends DriverSettings {
 
     @Test(priority = 1)

@@ -3,7 +3,6 @@ package clickElements;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
-@Owner("o.ignatenko")
 public class ClickElementsTest extends DriverSettings {
 
 

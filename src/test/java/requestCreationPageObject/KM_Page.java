@@ -47,19 +47,19 @@ public class KM_Page {
     @FindBy(xpath = "//select[@id='contract_templates']//option[3]")
     private WebElement contractTemplates;
 
-    @FindBy(id = "registration_number_supply_contract_p")
+    @FindBy(id = "registration_number_supply_contract_a")
     private WebElement contractRegistrationNumber;
 
-    @FindBy(id = "date_start_supply_contract_p_trigger")
+    @FindBy(id = "date_start_supply_contract_a_trigger")
     private WebElement startDateTrigger;
 
-    @FindBy(xpath = "//a[contains(text(),'29')]")
+    @FindBy(xpath = "//a[contains(text(),'28')]")
     private WebElement startDay;
 
-    @FindBy(xpath = "//button[@id='date_end_supply_contract_p_trigger']")
+    @FindBy(xpath = "//button[@id='date_end_supply_contract_a_trigger']")
     private WebElement endDateTrigger;
 
-    @FindBy(xpath = "//a[contains(text(),'30')]")
+    @FindBy(xpath = "//a[contains(text(),'28')]")
     private WebElement endDay;
 
     @FindBy(id = "delay_compensation_supply_contract_p")
@@ -104,10 +104,10 @@ public class KM_Page {
     @FindBy(css = "li.hidden-xs:nth-child(7) > a:nth-child(1)")
     private WebElement graphicBtn;
 
-    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[7]/div[1]/div[1]/div[1]/div[3]/div[3]/select[1]/option[1]")
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[7]/div[1]/div[1]/div[1]/div[2]/div[3]/select[1]/option[1]")
     private WebElement contractRC;
 
-    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[7]/div[1]/div[1]/div[1]/div[3]/div[4]/div[2]/div[1]/select[1]/option[3]")
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[7]/div[1]/div[1]/div[1]/div[2]/div[7]/div[2]/div[1]/select[1]/option[3]")
     private WebElement graphicType;
 
     @FindBy(id = "SAVE")
@@ -143,16 +143,64 @@ public class KM_Page {
     @FindBy(xpath = "//div[@class='desktop-bar']//ul[@id='toolbar']//li[@id='globalLinks']//ul[@class='dropdown-menu user-dropdown user-menu']//li//a[@id='logout_link']")
     private WebElement userPanelLogoutBtn;
 
-    @FindBy(xpath = "//input[@id='supply_schedule_supply_contract_p_pc_1_is_typical']")
+    @FindBy(xpath = "//input[@id='supply_schedule_supply_contract_a_pc_1_is_typical']")
     private WebElement isStandardGraphic;
 
-    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[7]/div[1]/div[1]/div[1]/div[3]/div[4]/div[2]/div[2]/select[1]/option[4]")
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[2]/div[7]/div[1]/div[1]/div[1]/div[2]/div[7]/div[2]/div[2]/select[1]/option[3]")
     private WebElement graphic14_2;
+
+
+    @FindBy(xpath = "//body/div[@id='bootstrap-container']/div[@id='content']/div[@id='pagecontent']/form[@id='EditView']/div[@id='EditView_tabs']/div[3]/div[3]/div[2]/div[1]/div[1]/div[3]/div[1]/div[2]/div[2]/div[2]/select[1]/option[2]")
+    private WebElement setContractIsTypicalField;
+
+	@FindBy(id = "postponement_days_supply_contract_a")
+	private WebElement setPostponementField;
+
+	@FindBy(id = "delay_compensation_supply_contract_a")
+    private WebElement setDelayField;
+
+	@FindBy(id = "discount_percent_supply_contract_a")
+    private WebElement setDiscountPercent;
+
+	@FindBy(id = "logistics_uah_kg_supply_contract_a")
+	private WebElement setLogisticsField;
+
+	@FindBy(id = "promotion_supply_contract_a")
+    private WebElement setPromotionField;
+
+	@FindBy(id = "refund_compensation_supply_contract_a")
+    private WebElement setRefundSupply;
+
+	@FindBy(id = "liabilities_reduction_discount_supply_contract_a")
+    private WebElement reductionDiscount;
+
+	@FindBy(id = "atb_accounter_name")
+    private WebElement setAtbAccounter;
+
+	@FindBy(id = "atb_address")
+    private WebElement setATB;
+
+	@FindBy(id = "atb_email")
+    private WebElement setATBEmail;
+
+	@FindBy(id = "auth_sign_acc_docs_fullname_atb")
+    private WebElement setFullName;
+
+	@FindBy(id = "auth_sign_acc_docs_discount_act_fullname_atb")
+    private WebElement setDiscountFullName;
+
+
+
 
 
     public void scrollUP() {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("window.scrollBy(0,-3000)", "");
+        jse.executeScript("window.scrollBy(0, -3000)", "");
+    }
+
+    public void scrollDown() {
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("window.scrollBy(0, 1200)", "");
     }
 
     public void logout() throws InterruptedException {
@@ -230,57 +278,120 @@ public class KM_Page {
         endDay.click();
     }
 
-    public void delayFieldFill(String delay) {
-        delayCompensationField.sendKeys(delay);
+//    public void delayFieldFill(String delay) {
+//        delayCompensationField.sendKeys(delay);
+//    }
+//
+//    public void discountFieldFill(String discount) {
+//        discountField.sendKeys(discount);
+//    }
+//
+//    public void postponementFieldFill(String postponement) {
+//        postponementField.sendKeys(postponement);
+//    }
+//
+//    public void contractIsTypicalClick() {
+//        contractIsTypical.click();
+//    }
+//
+//    public void refundCompensationFieldFill(String refund) {
+//        refundCompensationField.sendKeys(refund);
+//    }
+//
+//    public void logisticsFieldFill(String logistics) {
+//        logisticsField.sendKeys(logistics);
+//    }
+//
+//    public void promotionFieldFill(String promotion) {
+//        promotionField.sendKeys(promotion);
+//    }
+//
+//    public void reductionDiscountFieldFill(String discount){
+//        reductionDiscountField.sendKeys(discount);
+//    }
+//
+//    public void accounterNameFieldFill(String accounter) {
+//        accounterNameField.sendKeys(accounter);
+//    }
+//
+//    public void atbAddressFieldFill(String atbAddress) {
+//        atbAddressField.sendKeys(atbAddress);
+//    }
+//
+//    public void atbEmailFieldFill(String atbEmail) {
+//        atbEmailField.sendKeys(atbEmail);
+//    }
+//
+//    public void fullNameDiscountAccFieldFill(String fullName) {
+//        fullNameDiscountAccField.sendKeys(fullName);
+//    }
+//
+//    public void fullNameDocsAccFieldFill(String fullName) {
+//        fullNameDocsAccField.sendKeys(fullName);
+//    }
+
+    public void setContractIsTypical(){
+        scrollDown();
+        setContractIsTypicalField.click();
     }
 
-    public void discountFieldFill(String discount) {
-        discountField.sendKeys(discount);
+    public void setPostponementField(String postponement){
+        setPostponementField.sendKeys(postponement);
     }
 
-    public void postponementFieldFill(String postponement) {
-        postponementField.sendKeys(postponement);
+    public void setDelayField(String delay){
+        setDelayField.sendKeys(delay);
     }
 
-    public void contractIsTypicalClick() {
-        contractIsTypical.click();
+    public void setDiscountPercent(String discount){
+        setDiscountPercent.sendKeys(discount);
     }
 
-    public void refundCompensationFieldFill(String refund) {
-        refundCompensationField.sendKeys(refund);
+    public void setLogisticsField(String logistics){
+        setLogisticsField.sendKeys(logistics);
     }
 
-    public void logisticsFieldFill(String logistics) {
-        logisticsField.sendKeys(logistics);
+    public void setPromotionField(String promotion){
+        setPromotionField.sendKeys(promotion);
     }
 
-    public void promotionFieldFill(String promotion) {
-        promotionField.sendKeys(promotion);
+    public void setRefundSupply(String refundSupply){
+        setRefundSupply.sendKeys(refundSupply);
     }
 
-    public void reductionDiscountFieldFill(String discount){
-        reductionDiscountField.sendKeys(discount);
+    public void reductionDiscount(String discount){
+        reductionDiscount.sendKeys(discount);
     }
 
-    public void accounterNameFieldFill(String accounter) {
-        accounterNameField.sendKeys(accounter);
+    public void setAtbAccounter(String accounter){
+        setAtbAccounter.sendKeys(accounter);
     }
 
-    public void atbAddressFieldFill(String atbAddress) {
-        atbAddressField.sendKeys(atbAddress);
+    public void setATB(String atb){
+        setATB.sendKeys(atb);
     }
 
-    public void atbEmailFieldFill(String atbEmail) {
-        atbEmailField.sendKeys(atbEmail);
+    public void setATBEmail(String atbEmail){
+        setATBEmail.sendKeys(atbEmail);
     }
 
-    public void fullNameDiscountAccFieldFill(String fullName) {
-        fullNameDiscountAccField.sendKeys(fullName);
+    public void setFullName(String name){
+        setFullName.sendKeys(name);
     }
 
-    public void fullNameDocsAccFieldFill(String fullName) {
-        fullNameDocsAccField.sendKeys(fullName);
+    public void setDiscountFullName(String name){
+        setDiscountFullName.sendKeys(name);
     }
+
+
+
+
+
+
+
+
+
+
 
     public void graphicBtnClick(){
         graphicBtn.click();

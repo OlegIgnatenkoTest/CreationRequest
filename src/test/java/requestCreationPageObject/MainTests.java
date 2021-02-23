@@ -3,7 +3,6 @@ package requestCreationPageObject;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
-@Owner("o.ignatenko")
 public class MainTests extends DriverSettings {
 
     @Test(priority = 1)
@@ -42,21 +41,35 @@ public class MainTests extends DriverSettings {
         kmPage.endDateTriggerClick();
         kmPage.endDayClick();
 
-        kmPage.delayFieldFill(ConfProperties.getProperty("smallNumb"));
-        kmPage.discountFieldFill(ConfProperties.getProperty("smallNumb"));
-        kmPage.postponementFieldFill(ConfProperties.getProperty("smallNumb"));
-        kmPage.contractIsTypicalClick();
-        kmPage.refundCompensationFieldFill(ConfProperties.getProperty("smallNumb"));
-        kmPage.logisticsFieldFill(ConfProperties.getProperty("smallNumb"));
-        kmPage.promotionFieldFill(ConfProperties.getProperty("smallNumb"));
-        kmPage.reductionDiscountFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.delayFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.discountFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.postponementFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.contractIsTypicalClick();
+//        kmPage.refundCompensationFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.logisticsFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.promotionFieldFill(ConfProperties.getProperty("smallNumb"));
+//        kmPage.reductionDiscountFieldFill(ConfProperties.getProperty("smallNumb"));
+//
+//
+//        kmPage.accounterNameFieldFill(ConfProperties.getProperty("exText"));
+//        kmPage.atbAddressFieldFill(ConfProperties.getProperty("exText"));
+//        kmPage.atbEmailFieldFill(ConfProperties.getProperty("exEmail"));
+//        kmPage.fullNameDiscountAccFieldFill(ConfProperties.getProperty("exText"));
+//        kmPage.fullNameDocsAccFieldFill(ConfProperties.getProperty("exText"));
 
-
-        kmPage.accounterNameFieldFill(ConfProperties.getProperty("exText"));
-        kmPage.atbAddressFieldFill(ConfProperties.getProperty("exText"));
-        kmPage.atbEmailFieldFill(ConfProperties.getProperty("exEmail"));
-        kmPage.fullNameDiscountAccFieldFill(ConfProperties.getProperty("exText"));
-        kmPage.fullNameDocsAccFieldFill(ConfProperties.getProperty("exText"));
+        kmPage.setContractIsTypical();
+        kmPage.setPostponementField(ConfProperties.getProperty("smallNumb"));
+        kmPage.setDelayField(ConfProperties.getProperty("smallNumb"));
+        kmPage.setDiscountPercent(ConfProperties.getProperty("smallNumb"));
+        kmPage.setLogisticsField(ConfProperties.getProperty("smallNumb"));
+        kmPage.setPromotionField(ConfProperties.getProperty("smallNumb"));
+        kmPage.setRefundSupply(ConfProperties.getProperty("smallNumb"));
+        kmPage.reductionDiscount(ConfProperties.getProperty("smallNumb"));
+        kmPage.setAtbAccounter(ConfProperties.getProperty("exText"));
+        kmPage.setATB(ConfProperties.getProperty("exText"));
+        kmPage.setATBEmail(ConfProperties.getProperty("exEmail"));
+        kmPage.setFullName(ConfProperties.getProperty("exText"));
+        kmPage.setDiscountFullName(ConfProperties.getProperty("exText"));
 
         kmPage.scrollUP();
         kmPage.graphicBtnClick();
@@ -154,7 +167,15 @@ public class MainTests extends DriverSettings {
         klpPage.specificationBtnClick();
         klpPage.packagingSpecificationField(ConfProperties.getProperty("contNumb"));
         klpPage.packFullNameFieldClick();
-        klpPage.packagingSpecificationReturnField(ConfProperties.getProperty("exNumb"));
+        klpPage.packagingSpecificationReturnField(ConfProperties.getProperty("exText"));
+        klpPage.packIsBack();
+
+
+
+
+
+
+
         klpPage.saveBtnClick();
         klpPage.confirmBtnClick();
 

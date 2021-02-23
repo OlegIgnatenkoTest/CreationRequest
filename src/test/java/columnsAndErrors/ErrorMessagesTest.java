@@ -3,7 +3,6 @@ package columnsAndErrors;
 import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
-@Owner("o.ignatenko")
 public class ErrorMessagesTest extends DriverSettings {
 
     @Test(priority = 1)
