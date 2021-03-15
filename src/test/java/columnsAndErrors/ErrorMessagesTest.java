@@ -1,6 +1,5 @@
 package columnsAndErrors;
 
-import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
 public class ErrorMessagesTest extends DriverSettings {

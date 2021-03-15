@@ -1,6 +1,5 @@
 package productCreation;
 
-import io.qameta.allure.Owner;
 import org.testng.annotations.Test;
 
 public class ProductCreationPageTest extends DriverSettings {
