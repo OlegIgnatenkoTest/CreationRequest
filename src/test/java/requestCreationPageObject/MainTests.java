@@ -20,8 +20,7 @@ public class MainTests extends DriverSettings {
     @Test(priority = 3)
     public void kmProvidersChoose() {
         kmPage.openFilterClick();
-        kmPage.providerNameFieldFill("Miles");
-        //kmPage.providerNameFieldFill("Рияд Рамирес аль Хасар");
+        kmPage.providerNameFieldFill("Рияд");
         kmPage.searchBtnClick();
         kmPage.taleElementClick();
     }
